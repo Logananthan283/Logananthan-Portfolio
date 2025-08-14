@@ -47,6 +47,6 @@ Use this website to showcase your personal projects, skills, and experience to p
 
 ## Contact
 
-- Email: [Logananthan Gmail]logananthan10023082@gmail.com  
+- Email: logananthan10023082@gmail.com  
 - LinkedIn: [Logananthan Dhanasekar](https://www.linkedin.com/in/logananthan-d-100230826374305335)
 - GitHub: [Logananthan283](https://github.com/Logananthan283)
