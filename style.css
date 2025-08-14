@@ -391,7 +391,7 @@ footer {
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #1D4ED8; /* blue */
+  background-color: 0d495c; 
   color: white;
   font-weight: bold;
   text-decoration: none;
@@ -400,6 +400,6 @@ footer {
 }
 
 .btn:hover {
-  background-color: #2563EB; /* slightly lighter blue on hover */
+  background-color: #2563EB; 
   transform: translateY(-2px);
 }
