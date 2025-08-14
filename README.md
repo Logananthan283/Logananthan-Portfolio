@@ -8,7 +8,7 @@
 
 Showcasing the projects, skills, and experience of Logananthan Dhanasekar.  
 
-[Live Demo](https://your-live-demo-link.com)
+[Live Demo](https://logananthan283.github.io/Logananthan-Portfolio)
 
 ## About
 
@@ -39,7 +39,11 @@ It is fully responsive and works on all devices.
 
 ## Screenshot
 
-![Portfolio Screenshot](https://via.placeholder.com/800x400.png?text=Portfolio+Screenshot)
+## Screenshot
+
+![Portfolio Screenshot 1](./images/portfolio1.png)
+![Portfolio Screenshot 2](./images/portfolio2.png)
+
 
 ## Usage
 
