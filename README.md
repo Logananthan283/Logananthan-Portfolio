@@ -4,7 +4,7 @@
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Live Demo](https://img.shields.io/badge/Live-Demo-blue)
+![Live Demo]([https://img.shields.io/badge/Live-Demo-blue](https://logananthan283.github.io/Logananthan-Portfolio))
 
 Showcasing the projects, skills, and experience of Logananthan Dhanasekar.  
 
