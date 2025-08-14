@@ -37,7 +37,6 @@ It is fully responsive and works on all devices.
 - **Resume:** Link to resume or professional experience
 - **Contact:** Contact form and social media links
 
-## Screenshot
 
 ## Screenshot
 
