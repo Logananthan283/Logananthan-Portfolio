@@ -40,8 +40,8 @@ It is fully responsive and works on all devices.
 ## Screenshot
 
 <div>
-  <img src="./images/portfolio1.png" alt="Portfolio Screenshot 1" width="45%" style="margin-right: 10px;">
-  <img src="./images/portfolio2.png" alt="Portfolio Screenshot 2" width="45%">
+  <img src="./images/portfolio1.PNG" alt="Portfolio 1" width="45%" style="margin-right: 10px;">
+  <img src="./images/portfolio2.PNG" alt="Portfolio 2" width="45%">
 </div>
 
 ## Usage
