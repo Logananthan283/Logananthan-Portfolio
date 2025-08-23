@@ -268,20 +268,20 @@ body.dark .timeline-header:hover { background: rgba(255,255,255,.04); }
 }
 
 .stat .counter {
-  font-size: 1.6rem;   /* smaller number */
+  font-size: 1.6rem;   
   font-weight: 700;
   display: inline-block;
   line-height: 1;
 }
 
 .stat .plus {
-  font-size: 1.1rem;   /* smaller plus */
+  font-size: 1.1rem;   
   margin-left: .1rem;
   font-weight: 700;
 }
 
 .stat p {
   margin-top: .25rem;
-  font-size: .85rem;   /* smaller label */
+  font-size: .85rem;   
   opacity: .9;
 }
