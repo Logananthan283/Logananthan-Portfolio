@@ -78,7 +78,7 @@ a { color: inherit; text-decoration: none; }
 .subtitle { grid-area: subtitle; margin-top: .6rem; color: var(--muted); }
 .hero-actions { grid-area: actions; margin: 1.25rem 0; display: flex; gap: .75rem; flex-wrap: wrap; }
 .hero-media { grid-area: avatar; justify-self: center; }
-.stats { grid-area: stats; }
+.stats { grid-area: stats; margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: .75rem; text-align: center; }
 .quick-info { grid-area: quickinfo; margin-top: 1rem; display: grid; gap: .35rem; color: var(--muted); font-size: .95rem; }
 .quick-info a { text-decoration: underline; }
 
@@ -107,6 +107,9 @@ a { color: inherit; text-decoration: none; }
   }
   .hero-media { grid-area: avatar; }
   .avatar { width: 220px; height: 220px; }
+
+  /* stats become 3-column */
+  .stats { grid-template-columns: repeat(3, 1fr); }
 }
 @media (min-width: 980px) {
   .hero-text h1 { font-size: 2.6rem; }
@@ -199,7 +202,21 @@ body.dark .timeline-header:hover { background: rgba(255,255,255,.04); }
 .filters { margin: .5rem 0 1rem; display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; }
 .filter-btn { padding: .5rem .9rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; }
 .filter-btn.active { background: var(--primary); color: var(--primary-contrast); border-color: transparent; }
+
+/* Mobile first */
 .grid.cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+
+/* Tablet/Desktop – 3-1 pattern */
+@media (min-width: 768px) {
+  .grid.cards {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center; /* center single cards */
+  }
+  .grid.cards .card-item:nth-child(4n) {
+    grid-column: auto; /* keep same size, no stretching */
+  }
+}
+
 .card-item { overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--bg); transition: transform .12s ease, box-shadow .2s ease; }
 .card-item:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
 .card-item img { width: 100%; height: 180px; object-fit: cover; }
@@ -246,14 +263,18 @@ body.dark .timeline-header:hover { background: rgba(255,255,255,.04); }
 .darkmode-btn:hover { background: var(--bg); }
 
 /* ============================================================
-   COUNTER / STATS
+   COUNTER / STATS Sleek Design
    ============================================================ */
 .stats {
   margin-top: 1.2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: .8rem;
   text-align: center;
+}
+
+@media (min-width: 680px) {
+  .stats { grid-template-columns: repeat(3, 1fr); }
 }
 
 .stat {
