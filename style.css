@@ -56,12 +56,14 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .hero { min-height: 88vh; display: grid; place-items: center; }
 
-/* FIX: mobile-first grid */
+/* Mobile-first grid */
 .hero-grid {
   display: grid;
   gap: 1.5rem;
   align-items: center;
 }
+
+/* Hero text stacked on small screens */
 .hero-text {
   display: grid;
   gap: 1rem;
@@ -69,7 +71,6 @@ a { color: inherit; text-decoration: none; }
     "title"
     "subtitle"
     "actions"
-    "avatar"
     "stats"
     "quickinfo";
 }
@@ -90,12 +91,13 @@ a { color: inherit; text-decoration: none; }
   margin-inline: auto;
 }
 
-/* On larger screens restore two-column layout */
+/* On larger screens: make 2-column layout */
 @media (min-width: 680px) {
   .hero-grid {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1.4fr 1fr;  /* text left, avatar right */
     grid-template-areas: "text avatar";
   }
+
   .hero-text {
     grid-area: text;
     grid-template-areas:
@@ -104,9 +106,11 @@ a { color: inherit; text-decoration: none; }
       "actions"
       "stats"
       "quickinfo";
+    text-align: left;
   }
-  .hero-media { grid-area: avatar; }
-  .avatar { width: 220px; height: 220px; }
+
+  .hero-media { grid-area: avatar; align-self: start; }
+  .avatar { width: 220px; height: 220px; margin-inline: 0; }
 
   /* stats become 3-column */
   .stats { grid-template-columns: repeat(3, 1fr); }
@@ -114,6 +118,7 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 980px) {
   .hero-text h1 { font-size: 2.6rem; }
 }
+
 
 /* ============================================================
    BUTTONS
