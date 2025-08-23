@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ========= META ========= -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Portfolio of Logananthan Dhanasekar - Manual QA Engineer and Shopify E-commerce Developer.">
-  <title>Logananthan Dhanasekar — QA Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio of Logananthan Dhanasekar — Software Tester & Shopify Developer" />
+  <title>Logananthan Dhanasekar — Portfolio</title>
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- ========= FONTS & ICONS ========= -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css"/>
-
-  <!-- Favicon (optional) -->
   <link rel="icon" href="images/favicon.png" type="image/png">
+  <!-- ========= STYLES ========= -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- ========= DARK/LIGHT MODE TOGGLE ========= -->
+  <button id="modeToggle" class="darkmode-btn" aria-label="Toggle dark mode">
+    <i class="fa-solid fa-moon"></i>
+  </button>
 
-  <!-- ===== HEADER ===== -->
-  <header class="site-header" role="banner">
-    <div class="container header-container">
-      <a class="brand" href="#home" aria-label="Go to home">
-        <img src="images/logo.png" alt="LD Logo" class="brand-logo" />
-        <span class="brand-text">Logananthan D</span>
-      </a>
-
-      <nav class="site-nav" role="navigation" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation">
-          <span class="hamburger"></span>
-        </button>
-        <ul id="primary-menu" class="nav-links">
-          <li><a class="nav-link" href="#home">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#skills">Skills</a></li>
-          <li><a class="nav-link" href="#projects">Projects</a></li>
-          <li><a class="nav-link" href="#resume">Resume</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="content">
+  <!-- ========= MAIN CONTENT ========= -->
+  <main>
 
     <!-- ===== HERO ===== -->
-    <section id="home" class="hero section reveal">
+    <section class="section hero" id="home">
       <div class="container hero-grid">
         <div class="hero-text">
-          <h1>Hello, I’m <span>Logananthan Dhanasekar</span></h1>
-          <p class="subtitle">Manual Software Tester · Shopify E-commerce Developer</p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fa-solid fa-briefcase"></i> View My Work
+          <h1>Hi, I'm <span>Logananthan Dhanasekar</span></h1>
+          <p class="subtitle">Software Tester · Shopify E-commerce Developer</p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">
+              <i class="fa-solid fa-briefcase"></i> View Portfolio
             </a>
             <a href="#contact" class="btn btn-ghost">
-              <i class="fa-solid fa-paper-plane"></i> Contact Me
+              <i class="fa-solid fa-paper-plane"></i> Contact
             </a>
           </div>
+
+          <!-- Animated Stats -->
+          <div class="stats">
+            <div class="stat">
+              <span class="counter" data-target="100">0</span><span class="plus">+</span>
+              <p>Test Cases Designed</p>
+            </div>
+            <div class="stat">
+              <span class="counter" data-target="30">0</span><span class="plus">+</span>
+              <p>Critical Bugs Reported</p>
+            </div>
+            <div class="stat">
+              <span class="counter" data-target="1">0</span>
+              <p>Shopify Stores Built</p>
+            </div>
+          </div>
+
+          <!-- Quick info -->
           <ul class="quick-info">
-            <li><i class="fa-solid fa-location-dot"></i> India</li>
-            <li><i class="fa-solid fa-envelope"></i> logananthan10023082@gmail.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Omalur, Salem, India</li>
+            <li><i class="fa-solid fa-phone"></i> +91 63743 05335</li>
+            <li><i class="fa-solid fa-envelope"></i> Logananthan10023082@gmail.com</li>
             <li><i class="fa-brands fa-github"></i> <a href="https://github.com/Logananthan283" target="_blank" rel="noopener">GitHub</a></li>
             <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/logananthan-d-100230826374305335" target="_blank" rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
+
+        <!-- Headshot -->
         <div class="hero-media">
           <img src="images/1.jpg" alt="Logananthan Dhanasekar" class="avatar"/>
         </div>
@@ -74,182 +75,252 @@
     </section>
 
     <!-- ===== ABOUT ===== -->
-    <section id="about" class="section card reveal">
+    <section class="section card" id="about">
       <div class="container">
         <h2 class="section-title">About Me</h2>
-        <p class="lead">
-          Passionate and detail-oriented QA professional with hands-on experience in manual and functional testing for
-          web & mobile applications. Skilled at designing comprehensive test cases, executing test plans, identifying
-          critical bugs early, and collaborating closely with developers to ship reliable, user-friendly releases.
-          I also build and manage Shopify stores focused on clean UI, fast performance, and smooth checkout experiences.
+        <p>
+          Detail-oriented Software Tester with hands-on experience across manual and functional testing of web & mobile applications.
+          Proven track record of reducing post-release defects through precise test execution and defect reporting.
+          Skilled in test case design, regression, and Agile collaboration. I also build and test Shopify e-commerce applications.
+          B.E. in Electrical & Electronics Engineering; committed to continuous learning in QA practices.
+          <br><br>
+          Previously worked as an <strong>Accounts Assistant</strong>, where I developed strong attention to detail and accuracy, later applied in software quality assurance.
         </p>
       </div>
     </section>
 
     <!-- ===== SKILLS ===== -->
-    <section id="skills" class="section card reveal">
+    <section class="section card" id="skills">
       <div class="container">
         <h2 class="section-title">Skills & Tools</h2>
-
         <div class="chips">
+          <!-- Testing -->
           <span class="chip">Manual Testing</span>
+          <span class="chip">Functional/Regression</span>
           <span class="chip">Test Case Design & Execution</span>
-          <span class="chip">Functional & Regression Testing</span>
           <span class="chip">Bug Tracking & Reporting</span>
-          <span class="chip">Agile / Scrum</span>
+          <!-- Tools -->
           <span class="chip">Postman</span>
           <span class="chip">JMeter</span>
-          <span class="chip">Shopify Store Setup</span>
+          <span class="chip">Shopify (Dev + Ops)</span>
           <span class="chip">Microsoft Office</span>
-          <span class="chip">Product Listing</span>
+          <span class="chip">Tally ERP</span>
+          <!-- Methods -->
+          <span class="chip">QA Fundamentals</span>
+          <span class="chip">Agile & Scrum</span>
+          <!-- Soft Skills -->
           <span class="chip">Analytical Thinking</span>
+          <span class="chip">Communication</span>
+          <span class="chip">Problem Solving</span>
           <span class="chip">Time Management</span>
-          <span class="chip">Team Collaboration</span>
+          <span class="chip">Teamwork</span>
         </div>
       </div>
     </section>
 
-    <!-- ===== WORK PROJECTS ===== -->
-<section id="projects" class="section card reveal">
-  <div class="container">
-    <h2 class="section-title">Work</h2>
+    <!-- ===== TIMELINE ===== -->
+    <section class="section card" id="timeline">
+      <div class="container">
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="timeline">
 
-    <article class="project">
-      <div class="project-media">
-        <img src="images/4.png" alt="Manual Testing Project"/>
+          <!-- QA Job -->
+          <article class="timeline-item">
+            <button class="timeline-header" aria-expanded="false">
+              <div class="dot"></div>
+              <div class="timeline-meta">
+                <h3>Software Tester — MerlionTek, India</h3>
+                <span class="timeline-time">Jan 2025 – Present</span>
+              </div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="timeline-content" hidden>
+              <ul>
+                <li>Executed 100+ manual test cases on e-commerce and web apps.</li>
+                <li>Reported 50+ critical bugs, reducing post-release defects by ~30%.</li>
+                <li>Collaborated with developers & QA teams, cutting bug fix time by ~15%.</li>
+                <li>Performed regression testing for every release.</li>
+                <li>Created defect reports and documented test results.</li>
+                <li>Assisted performance testing under varying loads.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Shopify Project -->
+          <article class="timeline-item">
+            <button class="timeline-header" aria-expanded="false">
+              <div class="dot"></div>
+              <div class="timeline-meta">
+                <h3>E-commerce Project (Shopify) — MerlionTek</h3>
+                <span class="timeline-time">2025</span>
+              </div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="timeline-content" hidden>
+              <ul>
+                <li>Built & launched a Shopify store: catalog, cart, secure payments, orders.</li>
+                <li>Gathered requirements to meet business needs.</li>
+                <li>Conducted functional, regression, and performance testing.</li>
+                <li>Handled deployment, monitoring, and post-release support.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Accounts Assistant -->
+          <article class="timeline-item">
+            <button class="timeline-header" aria-expanded="false">
+              <div class="dot"></div>
+              <div class="timeline-meta">
+                <h3>Accounts Assistant — Pachaiamman Distributions</h3>
+                <span class="timeline-time">Sep 2022 – May 2024 · 1 yr 9 mos</span>
+              </div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="timeline-content" hidden>
+              <ul>
+                <li>Recorded sales, purchase, and billing transactions in Tally ERP.</li>
+                <li>Maintained financial records for electrical item distribution.</li>
+                <li>Processed invoices and reconciled purchase orders with delivery notes.</li>
+                <li>Coordinated with sales and procurement teams to resolve discrepancies.</li>
+                <li>Prepared reports on sales, purchases, and outstanding bills.</li>
+                <li>Developed attention to detail, accuracy, and systematic problem-solving — skills later applied in QA.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Education -->
+          <article class="timeline-item">
+            <button class="timeline-header" aria-expanded="false">
+              <div class="dot"></div>
+              <div class="timeline-meta">
+                <h3>B.E. — Electrical & Electronics Engineering</h3>
+                <span class="timeline-time">Aug 2018 – Jul 2022 · 71.06%</span>
+              </div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="timeline-content" hidden>
+              <p>Government College of Engineering, Dharmapuri, Tamil Nadu.</p>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="project-info">
-        <h3>Manual Tester</h3>
-        <p>
-          Spearheaded the design and execution of over 100 comprehensive manual test cases for web and mobile applications, covering functional, UI, and edge-case scenarios. Identified, documented, and reported critical defects, contributing to a significant reduction in post-release issues and enhancing overall product stability and user experience. Actively collaborated with cross-functional development teams to prioritize and implement timely fixes, ensuring consistent, high-quality releases while maintaining project deadlines and quality standards.
-        </p>
-        <ul class="tags">
-          <li>Test Design</li><li>Regression</li><li>Bug Reports</li>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section class="section card" id="portfolio">
+      <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="qa">QA</button>
+          <button class="filter-btn" data-filter="shopify">Shopify</button>
+          <button class="filter-btn" data-filter="academic">Academic</button>
+        </div>
+        <div class="grid cards">
+          <article class="card-item" data-category="qa">
+            <img src="images/4.png" alt="Manual Testing" />
+            <div class="card-body">
+              <h3>Manual Testing Suite</h3>
+              <p>Designed & executed 100+ test cases; reduced release defects by 30%.</p>
+            </div>
+          </article>
+          <article class="card-item" data-category="shopify">
+            <img src="images/2.png" alt="Shopify Store" />
+            <div class="card-body">
+              <h3>Shopify T-Shirt Store</h3>
+              <p>Developed a custom Shopify theme for a T-shirt brand, optimized for UX, speed, and higher conversions.</p>
+              <a class="btn btn-sm live-btn" href="https://leaderclothings.in" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Store
+              </a>
+            </div>
+
+          </article>
+          <article class="card-item" data-category="academic">
+            <img src="images/3.png" alt="Exam Guidance" />
+            <div class="card-body">
+              <h3>Exam Guidance System</h3>
+              <p>Navigation system for students to locate exam rooms efficiently.</p>
+            </div>
+          </article>
+          <article class="card-item" data-category="academic">
+            <img src="images/5.jpg" alt="Footstep Power" />
+            <div class="card-body">
+              <h3>Footstep Power Generation</h3>
+              <p>Pressure tiles capturing kinetic energy for LED lighting.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section class="section card" id="certifications">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <ul class="cert-list">
+          <li><i class="fa-solid fa-certificate"></i> Software Testing Course — MerlionTek (2024)</li>
+          <li><i class="fa-solid fa-certificate"></i> Science & Technology Capacity Building for Industrial Needs (2022)</li>
         </ul>
       </div>
-    </article>
-
-    <article class="project">
-      <div class="project-media">
-        <img src="images/2.png" alt="Shopify T-Shirt Store"/>
-      </div>
-      <div class="project-info">
-        <h3>Shopify T-Shirt E-commerce Store</h3>
-        <p>Built a fully customized Shopify e-commerce store for t-shirts, incorporating UX best practices, optimizing page load speed, and implementing design and functionality enhancements to drive higher conversions and improve overall customer engagement.</p>
-        <ul class="tags">
-          <li>Shopify</li><li>Theme Customization</li><li>Store Setup</li><li>Banner Design</li>
-        </ul>
-        <br>
-        <a href="https://leaderclothings.in" target="_blank" rel="noopener" class="btn">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Store
-        </a>  
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ===== COLLEGE PROJECTS ===== -->
-<section id="college-projects" class="section card reveal">
-  <div class="container">
-    <h2 class="section-title">College Projects</h2>
-
-    <article class="project">
-      <div class="project-media">
-        <img src="images/3.png" alt="Intelligent Examination Guidance System"/>
-      </div>
-      <div class="project-info">
-        <h3>Intelligent Examination Room Guidance System</h3>
-        <p>Developed a user-friendly digital guidance system that assists students in quickly locating their assigned examination rooms. The system streamlines navigation across large campuses, reduces confusion and crowding during exam days, and ensures smoother logistical coordination for both students and administrators</p>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="project-media">
-        <img src="images/5.jpg" alt="Footstep Power Generation System"/>
-      </div>
-      <div class="project-info">
-        <h3>Footstep Power Generation System</h3>
-        <p>Designed and implemented an eco-friendly energy harvesting system that uses pressure-sensitive tiles to capture kinetic energy from human footsteps. This generated power is stored and utilized for low-energy applications such as LED lighting, providing a sustainable and cost-effective solution for high-footfall areas like corridors, walkways, and public spaces.</p>
-      </div>
-    </article>
-  </div>
-</section>
+    </section>
 
     <!-- ===== RESUME ===== -->
-    <section id="resume" class="section card reveal">
-      <div class="container resume-row">
+    <section class="section card" id="resume">
+      <div class="container resume-center">
         <h2 class="section-title">Resume</h2>
- 
-
-        <div class="btn-left">
-          <a href="images/Resume.pdf" download class="btn btn-primary">
-            <i class="fa-solid fa-file-arrow-down"></i> Download Resume
-          </a>
-        </div>
+        <a class="btn btn-primary" href="images/Resume.pdf" download>
+          <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+        </a>
       </div>
     </section>
 
-<!-- ===== CONTACT ===== -->
-<section id="contact" class="section card reveal">
-  <div class="container">
-    <h2 class="section-title">Contact Me</h2>
-
-    <form id="contactForm" class="contact-form"
-          action="https://formspree.io/f/manbanod"
-          method="POST" novalidate>
-      <div class="grid-2">
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required>
-          <small class="error" id="err-name"></small>
-        </div>
-
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="_replyto" type="email" placeholder="you@example.com" required>
-          <small class="error" id="err-email"></small>
+    <!-- ===== CONTACT ===== -->
+    <section class="section card" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <form action="https://formspree.io/f/manbanod" method="POST" class="contact-form" novalidate>
+          <div class="grid-2">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+              <small class="error" id="err-name"></small>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="_replyto" type="email" placeholder="you@example.com" required />
+              <small class="error" id="err-email"></small>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Hi! How can I help you?" required></textarea>
+            <small class="error" id="err-message"></small>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Send
+          </button>
+          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="contact-links">
+          <p><a href="mailto:Logananthan10023082@gmail.com"><i class="fa-solid fa-envelope"></i> Logananthan10023082@gmail.com</a></p>
+          <p><i class="fa-solid fa-phone"></i> +91 63743 05335</p>
+          <p>
+            <a href="https://www.linkedin.com/in/logananthan-d-100230826374305335" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a> |
+            <a href="https://github.com/Logananthan283" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          </p>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="field">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
-        <small class="error" id="err-message"></small>
-      </div>
-
-      <button type="submit" class="btn btn-primary">
-        <i class="fa-solid fa-paper-plane"></i> Send
-      </button>
-      <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-    </form>
-
-    <div class="contact-links">
-      <p>
-        <a href="mailto:logananthan10023082@gmail.com">
-          <i class="fa-solid fa-envelope"></i> logananthan10023082@gmail.com
-        </a>
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/in/logananthan-d-100230826374305335" target="_blank" rel="noopener">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
-        </a>
-        |
-        <a href="https://github.com/Logananthan283" target="_blank" rel="noopener">
-          <i class="fa-brands fa-github"></i> GitHub
-        </a>
-      </p>
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Logananthan Dhanasekar. All Rights Reserved.</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2025 Logananthan Dhanasekar. All Rights Reserved.</p>
-  </div>
-</footer>
-
-<!-- ===== SCRIPTS ===== -->
-<script src="script.js"></script>
+  <!-- ===== SCRIPTS ===== -->
+  <script src="script.js"></script>
 </body>
 </html>
