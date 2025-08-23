@@ -6,18 +6,17 @@ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
 /* ============================================================
    DARK / LIGHT MODE
+   - Persists preference in localStorage
    ============================================================ */
 const modeToggle = $('#modeToggle');
 
 function setModeIcon() {
-  // Swap icon based on current theme
   const isDark = document.body.classList.contains('dark');
   modeToggle.innerHTML = isDark
     ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
     : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
 }
 
-// On load: use saved preference or system preference
 (function initTheme() {
   const saved = localStorage.getItem('theme');
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -50,18 +49,18 @@ function runCounters() {
       const progress = Math.min((now - start) / duration, 1);
       counter.textContent = Math.floor(progress * target);
       if (progress < 1) requestAnimationFrame(tick);
-      else counter.textContent = target; // ensure exact end value
+      else counter.textContent = target;
     }
     requestAnimationFrame(tick);
   });
 }
 
-// Observe hero for when counters should start
 const countersObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) runCounters();
   });
 }, { threshold: 0.4 });
+
 countersObserver.observe($('#home'));
 
 /* ============================================================
@@ -72,7 +71,6 @@ timelineItems.forEach(item => {
   const header = $('.timeline-header', item);
   const content = $('.timeline-content', item);
 
-  // Expand/collapse on button click
   header.addEventListener('click', () => {
     const expanded = header.getAttribute('aria-expanded') === 'true';
     header.setAttribute('aria-expanded', String(!expanded));
@@ -80,11 +78,9 @@ timelineItems.forEach(item => {
     header.classList.toggle('open', !expanded);
   });
 
-  // Reveal animation on scroll
   item.classList.add('reveal');
 });
 
-// Reveal observer
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('in');
@@ -101,7 +97,6 @@ const cards = $$('.card-item');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Update active state
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
@@ -114,29 +109,48 @@ filterBtns.forEach(btn => {
   });
 });
 
-
-
 /* ============================================================
-   CONTACT FORM (client-side validation helper)
+   CONTACT FORM (async submission)
    ============================================================ */
 const form = $('.contact-form');
 const statusEl = $('#formStatus');
-form?.addEventListener('submit', (e) => {
+
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
   const name = $('#name').value.trim();
   const email = $('#email').value.trim();
   const message = $('#message').value.trim();
 
   let ok = true;
-  // Simple checks (you can extend these)
+
   if (!name) { $('#err-name').textContent = 'Please enter your name.'; ok = false; } else { $('#err-name').textContent = ''; }
   if (!email || !/^\S+@\S+\.\S+$/.test(email)) { $('#err-email').textContent = 'Enter a valid email.'; ok = false; } else { $('#err-email').textContent = ''; }
   if (!message) { $('#err-message').textContent = 'Please enter a message.'; ok = false; } else { $('#err-message').textContent = ''; }
 
   if (!ok) {
-    e.preventDefault();
     statusEl.textContent = 'Please fix the highlighted fields.';
-  } else {
-    statusEl.textContent = 'Sending…';
-    // Let the form submit normally to Formspree
+    return;
+  }
+
+  statusEl.textContent = 'Sending…';
+
+  try {
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      statusEl.textContent = 'Message sent successfully!';
+      form.reset();
+    } else {
+      const data = await response.json();
+      statusEl.textContent = data?.error || 'Oops! Something went wrong.';
+    }
+  } catch (err) {
+    statusEl.textContent = 'Oops! Something went wrong.';
   }
 });
