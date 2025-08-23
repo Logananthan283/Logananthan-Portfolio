@@ -56,69 +56,87 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .hero { min-height: 88vh; display: grid; place-items: center; }
 
-/* Mobile-first grid */
+/* HERO GRID: 2 columns, headshot top-right */
 .hero-grid {
   display: grid;
-  gap: 1.5rem;
-  align-items: center;
+  grid-template-columns: 1fr auto; /* text left, avatar right */
+  align-items: start;              /* align avatar to top */
+  gap: 1rem;
 }
 
-/* Hero text stacked on small screens */
+/* Hero text layout */
 .hero-text {
   display: grid;
   gap: 1rem;
-  grid-template-areas:
-    "title"
-    "subtitle"
-    "actions"
-    "stats"
-    "quickinfo";
 }
-.hero-text h1 { grid-area: title; font-size: 2rem; line-height: 1.25; }
-.hero-text h1 span { color: var(--primary); }
-.subtitle { grid-area: subtitle; margin-top: .6rem; color: var(--muted); }
-.hero-actions { grid-area: actions; margin: 1.25rem 0; display: flex; gap: .75rem; flex-wrap: wrap; }
-.hero-media { grid-area: avatar; justify-self: center; }
-.stats { grid-area: stats; margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: .75rem; text-align: center; }
-.quick-info { grid-area: quickinfo; margin-top: 1rem; display: grid; gap: .35rem; color: var(--muted); font-size: .95rem; }
+
+.hero-text h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+.hero-text h1 span {
+  color: var(--primary);
+}
+
+.subtitle {
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+
+.hero-actions {
+  margin: 1.25rem 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.stats {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 in a row */
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.quick-info {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .quick-info a { text-decoration: underline; }
 
+/* Hero media (avatar) always top-right */
+.hero-media {
+  justify-self: end;
+  align-self: start;
+}
+
 .avatar {
-  width: 150px; height: 150px; object-fit: cover;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   border-radius: 50%;
   border: 6px solid var(--card);
   box-shadow: var(--shadow);
-  margin-inline: auto;
 }
 
-/* On larger screens: make 2-column layout */
+/* Medium screens */
+@media (min-width: 480px) {
+  .avatar { width: 140px; height: 140px; }
+}
+
+/* Large screens */
 @media (min-width: 680px) {
-  .hero-grid {
-    grid-template-columns: 1.4fr 1fr;  /* text left, avatar right */
-    grid-template-areas: "text avatar";
-  }
-
-  .hero-text {
-    grid-area: text;
-    grid-template-areas:
-      "title"
-      "subtitle"
-      "actions"
-      "stats"
-      "quickinfo";
-    text-align: left;
-  }
-
-  .hero-media { grid-area: avatar; align-self: start; }
-  .avatar { width: 220px; height: 220px; margin-inline: 0; }
-
-  /* stats become 3-column */
-  .stats { grid-template-columns: repeat(3, 1fr); }
+  .avatar { width: 220px; height: 220px; }
 }
+
+/* Extra large screens */
 @media (min-width: 980px) {
   .hero-text h1 { font-size: 2.6rem; }
 }
-
 
 /* ============================================================
    BUTTONS
@@ -211,14 +229,11 @@ body.dark .timeline-header:hover { background: rgba(255,255,255,.04); }
 /* Mobile first */
 .grid.cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 
-/* Tablet/Desktop – 3-1 pattern */
+/* Tablet/Desktop – 3 columns */
 @media (min-width: 768px) {
   .grid.cards {
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center; /* center single cards */
-  }
-  .grid.cards .card-item:nth-child(4n) {
-    grid-column: auto; /* keep same size, no stretching */
+    justify-items: center;
   }
 }
 
@@ -273,13 +288,9 @@ body.dark .timeline-header:hover { background: rgba(255,255,255,.04); }
 .stats {
   margin-top: 1.2rem;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: .8rem;
+  grid-template-columns: repeat(3, 1fr); /* always 3 in a row */
+  gap: 0.8rem;
   text-align: center;
-}
-
-@media (min-width: 680px) {
-  .stats { grid-template-columns: repeat(3, 1fr); }
 }
 
 .stat {
@@ -297,20 +308,30 @@ body.dark .timeline-header:hover { background: rgba(255,255,255,.04); }
 }
 
 .stat .counter {
-  font-size: 1.6rem;   /* smaller number */
+  font-size: 1.6rem;
   font-weight: 700;
   display: inline-block;
   line-height: 1;
 }
 
 .stat .plus {
-  font-size: 1.1rem;   /* smaller plus */
+  font-size: 1.1rem;
   margin-left: .1rem;
   font-weight: 700;
 }
 
 .stat p {
   margin-top: .25rem;
-  font-size: .85rem;   /* smaller label */
+  font-size: .85rem;
   opacity: .9;
+}
+
+/* Optional: reduce box size for very small screens */
+@media (max-width: 480px) {
+  .stat {
+    padding: 0.6rem 0.5rem;
+  }
+  .stat .counter { font-size: 1.2rem; }
+  .stat .plus { font-size: 1rem; }
+  .stat p { font-size: 0.75rem; }
 }
